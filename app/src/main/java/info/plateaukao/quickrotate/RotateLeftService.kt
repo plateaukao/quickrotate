@@ -2,12 +2,10 @@ package info.plateaukao.quickrotate
 
 import android.content.Intent
 import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
-import android.hardware.display.DisplayManager
 import android.provider.Settings
 import android.service.quicksettings.TileService
-import android.view.Display
 import android.view.Surface
-import androidx.core.content.getSystemService
+import android.view.WindowManager
 
 
 class RotateLeftService : TileService() {
@@ -21,17 +19,14 @@ class RotateLeftService : TileService() {
             return
         }
 
-        val defaultDisplay =
-            getSystemService<DisplayManager>()?.getDisplay(Display.DEFAULT_DISPLAY) ?: return
-
         Settings.System.putInt(
             contentResolver,
             Settings.System.ACCELEROMETER_ROTATION,
             0
         )
 
-        when (defaultDisplay.orientation) {
-            Surface.ROTATION_0-> Settings.System.putInt(
+        when ((getSystemService(WINDOW_SERVICE) as WindowManager).defaultDisplay.orientation) {
+            Surface.ROTATION_0 -> Settings.System.putInt(
                 contentResolver,
                 Settings.System.USER_ROTATION,
                 Surface.ROTATION_270
