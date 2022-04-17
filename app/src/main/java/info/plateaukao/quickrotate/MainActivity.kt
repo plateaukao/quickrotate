@@ -15,5 +15,6 @@ class MainActivity : AppCompatActivity() {
             Uri.parse("package:$packageName")
         )
         startActivityForResult(intent, 1234)
+        finish()
     }
 }
