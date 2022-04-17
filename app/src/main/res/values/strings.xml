@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">quickrotate</string>
+    <string name="rotate_left">rotate left</string>
+    <string name="rotate_right">rotate right</string>
+</resources>
