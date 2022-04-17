@@ -1,5 +1,6 @@
 package info.plateaukao.quickrotate
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.provider.Settings
@@ -9,7 +10,9 @@ import android.view.WindowManager
 
 
 class RotateLeftService : TileService() {
+    @SuppressLint("MissingPermission")
     override fun onClick() {
+        applicationContext.sendBroadcast(Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS))
         if (!Settings.System.canWrite(this)) {
             // show setting dialog
             val intent = Intent(this, MainActivity::class.java).apply {
