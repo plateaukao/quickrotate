@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="info.plateaukao.quickrotate">
 
+    <uses-permission android:name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <application
@@ -44,6 +45,16 @@
             <meta-data
                 android:name="android.service.quicksettings.ACTIVE_TILE"
                 android:value="true" />
+        </service>
+        <service
+            android:name=".RefreshTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_refresh"
+            android:label="@string/refresh"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
         </service>
     </application>
 
