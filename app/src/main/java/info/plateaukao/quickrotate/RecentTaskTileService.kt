@@ -5,6 +5,7 @@ import android.service.quicksettings.TileService
 import java.util.*
 
 open class RecentTaskTileService : TileService() {
+    @Suppress("DEPRECATION")
     override fun onClick() {
         val it = Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS)
         baseContext.sendBroadcast(it)

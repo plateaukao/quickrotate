@@ -4,4 +4,5 @@
     <string name="rotate_right">rotate right</string>
     <string name="refresh">Refresh</string>
     <string name="recent_apps">Recent Apps</string>
+    <string name="screenshot">Screenshot</string>
 </resources>
