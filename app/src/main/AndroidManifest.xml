@@ -79,8 +79,38 @@
         <service
             android:name=".RefreshModeTileService"
             android:exported="true"
-            android:icon="@drawable/ic_refresh_speed"
+            android:icon="@drawable/ic_speed"
             android:label="@string/refresh_mode"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".RefreshModeNormalTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_speed_normal"
+            android:label="@string/refresh_mode_normal"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".RefreshModeFastTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_speed_fast"
+            android:label="@string/refresh_mode_super_fast"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".RefreshModeFastQualityTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_speed_fast_quality"
+            android:label="@string/refresh_mode_fast_quality"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />

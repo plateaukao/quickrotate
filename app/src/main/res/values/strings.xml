@@ -6,4 +6,7 @@
     <string name="recent_apps">Recent Apps</string>
     <string name="screenshot">Screenshot</string>
     <string name="refresh_mode">Speed</string>
+    <string name="refresh_mode_fast_quality">Fast</string>
+    <string name="refresh_mode_super_fast">Super Fast</string>
+    <string name="refresh_mode_normal">Normal</string>
 </resources>
