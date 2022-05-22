@@ -5,8 +5,8 @@
     <string name="refresh">Refresh</string>
     <string name="recent_apps">Recent Apps</string>
     <string name="screenshot">Screenshot</string>
-    <string name="refresh_mode">Speed</string>
-    <string name="refresh_mode_fast_quality">Fast</string>
-    <string name="refresh_mode_super_fast">Super Fast</string>
+    <string name="refresh_mode">Switch</string>
+    <string name="refresh_mode_fast_quality">Speed</string>
+    <string name="refresh_mode_super_fast">A2</string>
     <string name="refresh_mode_normal">Normal</string>
 </resources>
