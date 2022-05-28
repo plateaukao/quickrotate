@@ -6,7 +6,7 @@ import com.onyx.android.sdk.api.device.epd.UpdateOption
 class RefreshModeTileService : BaseRefreshModeTileService() {
     override fun onClick() {
         super.onClick()
-        device?.systemRefreshMode =
-            if (EpdController.isInFastMode()) UpdateOption.NORMAL else UpdateOption.FAST
+        val option = if (EpdController.isInFastMode()) UpdateOption.NORMAL else UpdateOption.FAST
+        startActivity(RefreshModeActivity.createIntent(this, option))
     }
 }
