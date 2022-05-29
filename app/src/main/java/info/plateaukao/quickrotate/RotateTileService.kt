@@ -12,6 +12,11 @@ import android.view.Surface
 import android.view.WindowManager
 
 
+class Rotate180Service : RotateTileService() {
+    override val rotation = Surface.ROTATION_180
+    override val rotateDrawableId = R.drawable.ic_rotate_180
+}
+
 class RotateLeftService : RotateTileService() {
     override val rotation = Surface.ROTATION_270
     override val rotateDrawableId = R.drawable.ic_rotate_left

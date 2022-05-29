@@ -10,4 +10,5 @@
     <string name="refresh_mode_super_fast">A2</string>
     <string name="refresh_mode_normal">Normal</string>
     <string name="refresh_mode_x">X</string>
+    <string name="rotate_upside_down">upside down</string>
 </resources>
