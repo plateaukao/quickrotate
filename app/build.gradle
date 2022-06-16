@@ -10,8 +10,8 @@ android {
         applicationId "info.plateaukao.quickrotate"
         minSdk 24
         targetSdk 32
-        versionCode 1070
-        versionName "1.7"
+        versionCode 1080
+        versionName "1.8"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
