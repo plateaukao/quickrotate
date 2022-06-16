@@ -11,4 +11,6 @@
     <string name="refresh_mode_normal">Normal</string>
     <string name="refresh_mode_x">X</string>
     <string name="rotate_upside_down">upside down</string>
+    <string name="back">Back</string>
+    <string name="home">Home</string>
 </resources>
