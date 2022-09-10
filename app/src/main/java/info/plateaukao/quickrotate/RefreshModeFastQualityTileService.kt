@@ -1,10 +1,11 @@
 package info.plateaukao.quickrotate
 
+import android.service.quicksettings.TileService
 import com.onyx.android.sdk.api.device.epd.UpdateOption
 
-class RefreshModeFastQualityTileService : BaseRefreshModeTileService() {
+class RefreshModeFastQualityTileService : TileService() {
     override fun onClick() {
         super.onClick()
-        startActivity(RefreshModeActivity.createIntent(this, UpdateOption.FAST_QUALITY))
+        startActivityAndCollapse(RefreshModeActivity.createIntent(this, UpdateOption.FAST_QUALITY))
     }
 }
