@@ -1,39 +1,29 @@
-package info.plateaukao.quickrotate.service
+package info.plateaukao.quickrotate
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
-import android.content.Intent
 import android.os.Build
-import android.service.quicksettings.TileService
+import android.os.Bundle
+import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.SeekBar
 import androidx.annotation.RequiresApi
 import com.onyx.android.sdk.api.device.FrontLightController
-import info.plateaukao.quickrotate.FrontLightActivity
-import info.plateaukao.quickrotate.R
-import info.plateaukao.quickrotate.dp
 
-class FrontLightTileService: TileService() {
+class FrontLightActivity : Activity() {
     @RequiresApi(Build.VERSION_CODES.O)
-    override fun onClick() {
-        val it = Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS)
-        baseContext.sendBroadcast(it)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-        startActivity(
-            Intent(this, FrontLightActivity::class.java).apply {
-                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            }
-        )
-//        val dialog = AlertDialog.Builder(this)
-//            .setView(R.layout.front_light_adjust_layout)
-//            .create()
-//        dialog.window?.setType(WindowManager.LayoutParams.TYPE_APPLICATION_PANEL)
-//        dialog.show()
-//
-//        dialog.window?.setLayout(300.dp(this), ViewGroup.LayoutParams.WRAP_CONTENT)
-//        initViews(dialog)
+
+        val dialog = AlertDialog.Builder(this)
+            .setView(R.layout.front_light_adjust_layout)
+            .show()
+        dialog.window?.setLayout(300.dp(this), ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent);
+        initViews(dialog)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -66,9 +56,9 @@ class FrontLightTileService: TileService() {
 
         seekbarBrightness.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-                FrontLightController.setColdLightDeviceValue(this@FrontLightTileService, progress / 2)
+                FrontLightController.setColdLightDeviceValue(this@FrontLightActivity, progress / 2)
                 FrontLightController.setWarmLightDeviceValue(
-                    this@FrontLightTileService,
+                    this@FrontLightActivity,
                     progress/2 + offSet
                 )
             }
@@ -80,10 +70,10 @@ class FrontLightTileService: TileService() {
         seekbarTemperature.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 val coldBrightness =
-                    FrontLightController.getColdLightConfigValue(this@FrontLightTileService)
+                    FrontLightController.getColdLightConfigValue(this@FrontLightActivity)
                 offSet = progress
                 FrontLightController.setWarmLightDeviceValue(
-                    this@FrontLightTileService,
+                    this@FrontLightActivity,
                     coldBrightness + offSet
                 )
             }
@@ -107,3 +97,9 @@ class FrontLightTileService: TileService() {
         }
     }
 }
+
+fun Int.dp(context: Context): Int {
+    val metrics = context.resources.displayMetrics
+    return (this * (metrics.densityDpi / 160f)).toInt()
+}
+

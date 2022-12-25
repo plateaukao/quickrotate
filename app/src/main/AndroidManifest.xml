@@ -12,6 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
         <activity
+            android:name=".FrontLightActivity"
+            android:exported="false">
+        </activity>
+        <activity
             android:name=".RefreshModeActivity"
             android:exported="false" />
         <activity
@@ -166,6 +170,16 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
+<!--        <service-->
+<!--            android:name=".service.FrontLightTileService"-->
+<!--            android:exported="true"-->
+<!--            android:icon="@drawable/ic_frontlight"-->
+<!--            android:label="@string/front_light"-->
+<!--            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.service.quicksettings.action.QS_TILE" />-->
+<!--            </intent-filter>-->
+<!--        </service>-->
     </application>
 
 </manifest>

@@ -13,4 +13,5 @@
     <string name="rotate_upside_down">upside down</string>
     <string name="back">Back</string>
     <string name="home">Home</string>
+    <string name="front_light">Frontlight</string>
 </resources>
