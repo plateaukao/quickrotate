@@ -1,4 +1,4 @@
-package info.plateaukao.quickrotate
+package info.plateaukao.quickrotate.service
 
 import android.content.ComponentName
 import android.content.Intent

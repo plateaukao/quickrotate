@@ -67,7 +67,7 @@
                 android:value="true" />
         </service>
         <service
-            android:name=".RefreshTileService"
+            android:name=".service.RefreshTileService"
             android:exported="true"
             android:icon="@drawable/ic_refresh"
             android:label="@string/refresh"
@@ -77,7 +77,7 @@
             </intent-filter>
         </service>
         <service
-            android:name=".RecentTaskTileService"
+            android:name=".service.RecentTaskTileService"
             android:exported="true"
             android:icon="@drawable/ic_recent_tasks"
             android:label="@string/recent_apps"
@@ -87,7 +87,7 @@
             </intent-filter>
         </service>
         <service
-            android:name=".GoHomeTileService"
+            android:name=".service.GoHomeTileService"
             android:exported="true"
             android:icon="@drawable/ic_home"
             android:label="@string/home"
@@ -97,7 +97,7 @@
             </intent-filter>
         </service>
         <service
-            android:name=".GoBackTileService"
+            android:name=".service.GoBackTileService"
             android:exported="true"
             android:icon="@drawable/ic_back"
             android:label="@string/back"
@@ -107,7 +107,7 @@
             </intent-filter>
         </service>
         <service
-            android:name=".ScreenshotTileService"
+            android:name=".service.ScreenshotTileService"
             android:exported="true"
             android:icon="@drawable/ic_screenshot"
             android:label="@string/screenshot"
@@ -117,7 +117,7 @@
             </intent-filter>
         </service>
         <service
-            android:name=".RefreshModeTileService"
+            android:name=".service.RefreshModeTileService"
             android:exported="true"
             android:icon="@drawable/ic_speed"
             android:label="@string/refresh_mode"
@@ -127,7 +127,7 @@
             </intent-filter>
         </service>
         <service
-            android:name=".RefreshModeXTileService"
+            android:name=".service.RefreshModeXTileService"
             android:exported="true"
             android:icon="@drawable/ic_speed_x"
             android:label="@string/refresh_mode_x"
@@ -137,7 +137,7 @@
             </intent-filter>
         </service>
         <service
-            android:name=".RefreshModeNormalTileService"
+            android:name=".service.RefreshModeNormalTileService"
             android:exported="true"
             android:icon="@drawable/ic_speed_normal"
             android:label="@string/refresh_mode_normal"
@@ -147,7 +147,7 @@
             </intent-filter>
         </service>
         <service
-            android:name=".RefreshModeFastTileService"
+            android:name=".service.RefreshModeFastTileService"
             android:exported="true"
             android:icon="@drawable/ic_speed_fast"
             android:label="@string/refresh_mode_super_fast"
@@ -157,7 +157,7 @@
             </intent-filter>
         </service>
         <service
-            android:name=".RefreshModeFastQualityTileService"
+            android:name=".service.RefreshModeFastQualityTileService"
             android:exported="true"
             android:icon="@drawable/ic_speed_fast_quality"
             android:label="@string/refresh_mode_fast_quality"
