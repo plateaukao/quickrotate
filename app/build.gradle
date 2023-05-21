@@ -10,8 +10,8 @@ android {
         applicationId "info.plateaukao.quickrotate"
         minSdk 25
         targetSdk 32
-        versionCode 2000
-        versionName "2.0"
+        versionCode 2010
+        versionName "2.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -31,7 +31,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.onyx.android.sdk:onyxsdk-device:1.2.16'
+    implementation 'com.onyx.android.sdk:onyxsdk-device:1.2.20'
     testImplementation 'junit:junit:4.13.2'
 }
 
