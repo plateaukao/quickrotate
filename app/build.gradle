@@ -4,14 +4,15 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 34
 
     defaultConfig {
         applicationId "info.plateaukao.quickrotate"
         minSdk 25
-        targetSdk 32
-        versionCode 2010
-        versionName "2.1"
+        //noinspection EditedTargetSdkVersion
+        targetSdk 34
+        versionCode 2020
+        versionName "2.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
