@@ -14,6 +14,6 @@ class RefreshTileService : TileService() {
                 baseContext.sendBroadcast(Intent("onyx.android.intent.action.REFRESH_SCREEN"))
             }
         }
-        Timer().schedule(timerTaskObj, 100)
+        Timer().schedule(timerTaskObj, 300)
     }
 }

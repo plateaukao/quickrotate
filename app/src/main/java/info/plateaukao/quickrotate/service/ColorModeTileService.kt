@@ -1,5 +1,6 @@
 package info.plateaukao.quickrotate.service
 
+import android.content.Intent
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import info.plateaukao.quickrotate.Utility
@@ -21,6 +22,8 @@ class ColorModeTileService: TileService() {
             setState(Tile.STATE_ACTIVE)
         }
         utility.toggleGrayscale(this, oldState == Tile.STATE_INACTIVE)
+
+        baseContext.sendBroadcast(Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS))
     }
 
 

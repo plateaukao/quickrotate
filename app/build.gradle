@@ -32,7 +32,6 @@ android {
 }
 
 dependencies {
-    implementation 'com.onyx.android.sdk:onyxsdk-device:1.2.20'
     testImplementation 'junit:junit:4.13.2'
 }
 

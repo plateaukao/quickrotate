@@ -5,11 +5,13 @@ import android.content.ComponentName
 import android.content.Intent
 import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.graphics.drawable.Icon
+import android.os.Build
 import android.os.IBinder
 import android.provider.Settings
 import android.service.quicksettings.TileService
 import android.view.Surface
 import android.view.WindowManager
+import com.onyx.android.sdk.utils.RotationUtils
 
 
 class Rotate180Service : RotateTileService() {
@@ -39,11 +41,20 @@ open class RotateTileService : TileService() {
             else -> Surface.ROTATION_0
         }
 
-        Settings.System.putInt(
-            contentResolver,
-            Settings.System.USER_ROTATION,
-            newOrientation
-        )
+        if (Build.MANUFACTURER.equals("ONYX")) {
+            val intent = Intent().apply {
+                action = "com.onyx.action.ROTATION"
+                putExtra("rotation", newOrientation)
+                putExtra("args_rotate_by", 2)
+            }
+            baseContext.sendBroadcast(intent)
+        } else {
+            Settings.System.putInt(
+                contentResolver,
+                Settings.System.USER_ROTATION,
+                newOrientation
+            )
+        }
         updateTile(newOrientation)
     }
 
