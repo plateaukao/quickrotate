@@ -11,8 +11,6 @@ import android.provider.Settings
 import android.service.quicksettings.TileService
 import android.view.Surface
 import android.view.WindowManager
-import com.onyx.android.sdk.utils.RotationUtils
-
 
 class Rotate180Service : RotateTileService() {
     override val rotation = Surface.ROTATION_180

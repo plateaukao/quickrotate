@@ -11,8 +11,8 @@ android {
         minSdk 25
         //noinspection EditedTargetSdkVersion
         targetSdk 34
-        versionCode 2020
-        versionName "2.2"
+        versionCode 2030
+        versionName "2.3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -32,6 +32,7 @@ android {
 }
 
 dependencies {
+    implementation 'com.onyx.android.sdk:onyxsdk-device:1.2.28'
     testImplementation 'junit:junit:4.13.2'
 }
 
